@@ -14,8 +14,9 @@ Included Software
 - MySQL
 - Sqlite3
 - PostgreSQL
-- Composer
 - Node
+- Composer
+- WP-CLI
 - MailHog
 - mhsendmail
 - Oh My ZSH!
