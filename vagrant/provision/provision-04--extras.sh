@@ -7,9 +7,6 @@ extras_nodejs_install() {
   if [ ! -f "/usr/bin/node" ]; then
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     apt-get install -y nodejs
-    /usr/bin/npm install -g yarn
-    /usr/bin/npm install -g grunt-cli
-    /usr/bin/npm install -g gulp-cli
   fi
 }
 

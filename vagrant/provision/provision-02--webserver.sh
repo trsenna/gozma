@@ -19,7 +19,7 @@ webserver_install() {
 }
 
 webserver_setup() {
-  local DOMAIN='gozma18.local'
+  local DOMAIN='gozma.local'
 
   echo "<VirtualHost *:80>
     ServerName ${DOMAIN}
