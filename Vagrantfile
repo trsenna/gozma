@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-05--cleanup.sh'
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
-    ubuntu.vm.synced_folder '~/PhpStorm__Projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
+    ubuntu.vm.synced_folder '~/Projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
     # configuration
     ubuntu.vm.provider "virtualbox" do |v|
       v.memory = 1024
