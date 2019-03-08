@@ -16,7 +16,8 @@ common_install() {
     ngrep wget unzip zip \
     whois vim mcrypt \
     bash-completion zsh \
-    htop curl vim
+    htop curl vim \
+    iotop
 }
 
 #== Provisioning Script ==
