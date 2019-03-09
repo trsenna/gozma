@@ -5,19 +5,14 @@
 
 common_update() {
   apt-get update
-  apt-get upgrade -y
 }
 
 common_install() {
   apt-get install -y \
-    colordiff dos2unix gettext \
-    graphviz imagemagick \
-    git-core subversion \
-    ngrep wget unzip zip \
-    whois vim mcrypt \
-    bash-completion zsh \
-    htop curl vim \
-    iotop
+    colordiff dos2unix gettext graphviz imagemagick \
+    git-core subversion ngrep wget unzip zip \
+    whois vim mcrypt bash-completion zsh \
+    htop curl vim iotop
 }
 
 #== Provisioning Script ==
