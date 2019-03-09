@@ -8,7 +8,6 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-common.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-webserver.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-databases.sh'
-    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-desktop.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-extras.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-cleanup.sh'
     # synced folders
@@ -18,7 +17,6 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.synced_folder 'vagrant/shared', '/vagrant/shared', owner: 'vagrant', group: 'vagrant', create: true
     # configuration
     ubuntu.vm.provider "virtualbox" do |v|
-      v.gui = true
       v.memory = 1024
     end
   end
