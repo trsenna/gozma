@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-webserver.sh'
     # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-databases.sh'
     # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-extras.sh'
-    # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-cleanup.sh'
+    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-cleanup.sh'
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
     ubuntu.vm.synced_folder '~/Projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
