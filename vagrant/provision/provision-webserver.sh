@@ -41,9 +41,7 @@ webserver_ownership() {
 #== Provisioning Script ==
 
 export DEBIAN_FRONTEND=noninteractive
-
 webserver_install
 webserver_ownership
 
-# Restart service
 service apache2 restart

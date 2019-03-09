@@ -68,7 +68,6 @@ extras_ohmyzsh_install() {
 #== Provisioning Script ==
 
 export DEBIAN_FRONTEND=noninteractive
-
 extras_nodejs_install
 extras_javasdk_install
 extras_composer_install

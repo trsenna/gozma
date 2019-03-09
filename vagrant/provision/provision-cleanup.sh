@@ -15,6 +15,5 @@ cleanup_ownership() {
 #== Provisioning Script ==
 
 export DEBIAN_FRONTEND=noninteractive
-
 cleanup_clean
 cleanup_ownership
