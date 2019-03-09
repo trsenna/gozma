@@ -11,11 +11,16 @@ extras_nodejs_install() {
 }
 
 extras_javasdk_install() {
-  apt-get install -y openjdk-8-jdk
-  su - vagrant -c 'curl -s "https://get.sdkman.io" | bash'
-  su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install groovy'
-  su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install gradle'
-  su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install maven'
+  apt-get -y install \
+    openjdk-8-jdk \
+    openjdk-8-source
+
+  if [ ! -d "/home/vagrant/.sdkman" ]; then
+    su - vagrant -c 'curl -s "https://get.sdkman.io" | bash'
+    su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install groovy'
+    su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install gradle'
+    su - vagrant -c 'source /home/vagrant/.sdkman/bin/sdkman-init.sh && yes | sdk install maven'
+  fi
 }
 
 extras_composer_install() {
