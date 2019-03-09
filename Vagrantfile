@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
     ubuntu.vm.synced_folder '~/Projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
+    ubuntu.vm.synced_folder 'vagrant/files', '/vagrant/files', owner: 'vagrant', group: 'vagrant', create: true
     ubuntu.vm.synced_folder 'vagrant/shared', '/vagrant/shared', owner: 'vagrant', group: 'vagrant', create: true
     # configuration
     ubuntu.vm.provider "virtualbox" do |v|
