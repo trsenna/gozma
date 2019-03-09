@@ -6,10 +6,10 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.network "private_network", ip: "192.168.27.10"
     # provisioners
     ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-common.sh'
-    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-webserver.sh'
-    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-databases.sh'
-    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-extras.sh'
-    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-cleanup.sh'
+    ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-webserver.sh'
+    ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-databases.sh'
+    ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-extras.sh'
+    ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-cleanup.sh'
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
     ubuntu.vm.synced_folder '~/Projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
