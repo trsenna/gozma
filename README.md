@@ -4,24 +4,6 @@ Gozma
 Easily vagrant up the latest ubuntu LTS machine.
 
 
-Included Software
------------------
-
-- Ubuntu 18.04
-- Git
-- PHP 7.2
-- Apache
-- MySQL
-- Sqlite3
-- PostgreSQL
-- Node
-- Composer
-- WP-CLI
-- MailHog
-- mhsendmail
-- Oh My ZSH!
-
-
 Accessing Globally
 ------------------
 

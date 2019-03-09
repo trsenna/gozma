@@ -4,11 +4,11 @@
 #== Functionality ==
 
 common_update() {
-  apt-get update
+  apt-get -y update
 }
 
 common_install() {
-  apt-get install -y \
+  apt-get -y install \
     colordiff dos2unix gettext graphviz imagemagick \
     git-core subversion ngrep wget unzip zip \
     whois vim mcrypt bash-completion zsh \

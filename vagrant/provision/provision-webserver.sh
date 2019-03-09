@@ -4,7 +4,7 @@
 #== Functionality ==
 
 webserver_install() {
-  apt-get install -y \
+  apt-get -y install \
     apache2 php7.2 \
     libapache2-mod-php7.2 \
     php7.2-cli php7.2-common php7.2-dev \

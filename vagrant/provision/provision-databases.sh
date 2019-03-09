@@ -7,7 +7,7 @@ database_install() {
   echo "mysql-server mysql-server/root_password password root@secret" | debconf-set-selections
   echo "mysql-server mysql-server/root_password_again password root@secret" | debconf-set-selections
 
-  apt-get install -y \
+  apt-get -y install \
     mysql-server \
     postgresql postgresql-contrib \
     sqlite3 libsqlite3-dev
@@ -18,6 +18,5 @@ database_install() {
 export DEBIAN_FRONTEND=noninteractive
 database_install
 
-# Restart services
 service mysql restart
 service postgresql restart
