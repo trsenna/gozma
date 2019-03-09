@@ -16,34 +16,17 @@ webserver_install() {
     php7.2-xmlrpc php7.2-xsl php7.2-json \
     php7.2-bz2 php7.2-imagick \
     php-pear
-}
 
-webserver_setup() {
-  local DOMAIN='gozma.local'
+    cat /vagrant/files/000-default.conf > /etc/apache2/sites-available/000-default.conf
 
-  echo "<VirtualHost *:80>
-    ServerName ${DOMAIN}
-    DocumentRoot /var/www/html
-    AllowEncodedSlashes On
-    <Directory /var/www/html>
-      Options +Indexes +FollowSymLinks
-    	DirectoryIndex index.php index.html
-    	Order allow,deny
-    	Allow from all
-    	AllowOverride All
-    </Directory>
-    ErrorLog \${APACHE_LOG_DIR}/error.log
-    CustomLog \${APACHE_LOG_DIR}/access.log combined
-  </VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+    sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.2/apache2/php.ini
+    sed -i "s/post_max_size = .*/post_max_size = 64M/" /etc/php/7.2/apache2/php.ini
+    sed -i "s/upload_max_filesize = .*/upload_max_filesize = 32M/" /etc/php/7.2/apache2/php.ini
 
-  sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.2/apache2/php.ini
-  sed -i "s/post_max_size = .*/post_max_size = 64M/" /etc/php/7.2/apache2/php.ini
-  sed -i "s/upload_max_filesize = .*/upload_max_filesize = 32M/" /etc/php/7.2/apache2/php.ini
-
-  a2enmod expires
-  a2enmod headers
-  a2enmod include
-  a2enmod rewrite
+    a2enmod expires
+    a2enmod headers
+    a2enmod include
+    a2enmod rewrite
 }
 
 webserver_ownership() {
@@ -60,8 +43,7 @@ webserver_ownership() {
 export DEBIAN_FRONTEND=noninteractive
 
 webserver_install
-# webserver_setup
-# webserver_ownership
+webserver_ownership
 
 # Restart service
 service apache2 restart
