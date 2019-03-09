@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
     # provisioners
     ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-common.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-webserver.sh'
-    # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-databases.sh'
-    # ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-extras.sh'
+    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-databases.sh'
+    ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-extras.sh'
     ubuntu.vm.provision 'shell', path: './vagrant/provision/provision-cleanup.sh'
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
