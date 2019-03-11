@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 #====================================================
-#== WebServer
+#== Apache2 & PHP
 #====================================================
 apt-get -y install \
-  apache2 php7.2 \
-  libapache2-mod-php7.2 \
+  apache2 libapache2-mod-php7.2
+
+apt-get -y install \
+  php7.2 \
   php7.2-cli php7.2-common php7.2-dev \
   php7.2-pgsql php7.2-sqlite3 php7.2-gd \
   php7.2-curl php7.2-memcached \
@@ -43,16 +45,20 @@ service apache2 restart
 
 
 #====================================================
-#== Extras
+#== Composer
 #====================================================
-
-#== Composer ==
 if [ ! -f "/usr/local/bin/composer" ]; then
   curl -sS https://getcomposer.org/installer | php
   mv composer.phar /usr/local/bin/composer
 fi
 
-#== WP-CLI ==
+
+
+
+
+#====================================================
+#== WP-CLI
+#====================================================
 if [ ! -f "/usr/local/bin/wp" ]; then
   curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   chmod +x wp-cli.phar
