@@ -126,6 +126,10 @@ if [ ! -d "/home/vagrant/.oh-my-zsh" ]; then
   su - vagrant -c 'cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc'
 fi
 
+
+
+
+
 #====================================================
 #== Cleanup
 #====================================================
