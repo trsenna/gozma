@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision 'shell', path: 'vagrant/provision/provision-cleanup.sh'
     # synced folders
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
+    ubuntu.vm.synced_folder 'projects', '/projects', owner: 'vagrant', group: 'vagrant', create: true
     # configuration
     ubuntu.vm.provider "virtualbox" do |v|
       v.memory = 1024

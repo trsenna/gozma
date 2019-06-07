@@ -50,7 +50,7 @@ apt-get -y install \
 #====================================================
 #== Node.js
 #====================================================
-if [[ ! -f "/usr/bin/node" ]]; then
+if [ ! -f "/usr/bin/node" ]; then
   curl -sL https://deb.nodesource.com/setup_8.x | bash -
   apt-get install -y nodejs
 fi
@@ -62,7 +62,7 @@ fi
 #====================================================
 #== MailHog
 #====================================================
-if [[ ! -f "/usr/local/bin/mailhog" ]]; then
+if [ ! -f "/usr/local/bin/mailhog" ]; then
   wget --quiet -O /usr/local/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v1.0.0/MailHog_linux_amd64
   chmod +x /usr/local/bin/mailhog
 fi
@@ -74,7 +74,7 @@ fi
 #====================================================
 #== mhsendmail
 #====================================================
-if [[ ! -f "/usr/local/bin/mhsendmail" ]]; then
+if [ ! -f "/usr/local/bin/mhsendmail" ]; then
   wget --quiet -O /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64
   chmod +x /usr/local/bin/mhsendmail
 fi
