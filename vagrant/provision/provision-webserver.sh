@@ -18,7 +18,25 @@ apt-get -y install \
   php7.2-bz2 php7.2-imagick \
   php-pear
 
-cat /vagrant/files/000-default.conf > /etc/apache2/sites-available/000-default.conf
+echo "<VirtualHost *:80>
+
+	ServerName gozma.local
+	DocumentRoot /var/www/html
+	AllowEncodedSlashes On
+
+	<Directory /var/www/html>
+		Options +Indexes +FollowSymLinks
+		DirectoryIndex index.php index.html
+		Order allow,deny
+		Allow from all
+		AllowOverride All
+	</Directory>
+
+	ErrorLog \${APACHE_LOG_DIR}/error.log
+	CustomLog \${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+" > /etc/apache2/sites-available/000-default.conf
 
 sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.2/apache2/php.ini
 sed -i "s/post_max_size = .*/post_max_size = 64M/" /etc/php/7.2/apache2/php.ini
