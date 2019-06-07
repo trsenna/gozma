@@ -2,3 +2,4 @@
 .DS_Store
 /.vagrant
 /package.box
+/vagrant/shared
